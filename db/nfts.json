@@ -1,0 +1,137 @@
+{
+    "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b": {
+        "nfts": [
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/57",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/57",
+                "metadata": {
+                    "name": "Ethereum Classic #57",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/58",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/58",
+                "metadata": {
+                    "name": "Ethereum Classic #58",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/59",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/59",
+                "metadata": {
+                    "name": "Ethereum Classic #59",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/60",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/60",
+                "metadata": {
+                    "name": "Ethereum Classic #60",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/61",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/61",
+                "metadata": {
+                    "name": "Ethereum Classic #61",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/93",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/93",
+                "metadata": {
+                    "name": "Ethereum Classic #93",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/94",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/94",
+                "metadata": {
+                    "name": "Ethereum Classic #94",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/95",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/95",
+                "metadata": {
+                    "name": "Ethereum Classic #95",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/96",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/96",
+                "metadata": {
+                    "name": "Ethereum Classic #96",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/97",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/97",
+                "metadata": {
+                    "name": "Ethereum Classic #97",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/104",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/104",
+                "metadata": {
+                    "name": "Ethereum Classic #104",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/105",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/105",
+                "metadata": {
+                    "name": "Ethereum Classic #105",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            },
+            {
+                "etherscan": "https://etherscan.io/nft/0x30ccf3Af1152791BB6220c78484a6E08DBE2d1dc/106",
+                "ipfs": "https://ipfs.io/ipfs/QmVGNCPsiuEcPsZmY4jyH5F6cRsfxggsoSg7TgZ7W7myjA/106",
+                "metadata": {
+                    "name": "Ethereum Classic #106",
+                    "description": "Mining as a Service",
+                    "image": "ipfs://QmV3oHk944dLUXSXYh9LSrfAmPoFzsuBWyMMseF1HBPeZT",
+                    "animation_url": "https://ipfs.io/ipfs/QmcrCJpZExmix2zkvCs33bqdCtWPB1tdQZioPMcTx3kQrU"
+                }
+            }
+        ],
+        "expiresIn": 1664447927621
+    }
+}
