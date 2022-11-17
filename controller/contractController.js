@@ -144,9 +144,9 @@ const _getWalletNFTsInfo = async (wallet) => {
  */
 const getWalletNFTs = async (req, res, next) => {
   try {
-    // const { wallet } = req.user;
+    const { wallet } = req.user;
 
-    const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b";  //is temp
+    // const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b";  //is temp
 
     if (!wallet) throw new Error(createHttpError(400));
 
