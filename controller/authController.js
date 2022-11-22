@@ -39,8 +39,8 @@ const signIn = async (req, res, next) => {
     const { message, signature } = req.body;
 
     if (!message || !signature) throw new Error(createHttpError(400));
-
-    const walletAddress = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"// await web3.eth.accounts.recover(message, signature);
+    // const walletAddress = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"//
+    const walletAddress = await web3.eth.accounts.recover(message, signature);
 
     let userInfo = getUserByWallet(walletAddress);
 
