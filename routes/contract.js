@@ -18,13 +18,13 @@ contractRouter.get("/price-feed", getPriceFeeds);
  */
 contractRouter.get(
   "/wallets-balance",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   getWalletBalance
 );
 
 contractRouter.get(
   "/wallet-nfts",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   getWalletNFTs
 );
 

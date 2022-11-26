@@ -30,7 +30,7 @@ const callLiteCoinAPI = ()=>{
   });
 }
 
-setInterval(callLiteCoinAPI, 600000);
+// setInterval(callLiteCoinAPI, 600000);
 
 // to get starttime for distinct timespans
 const getStartTime = (placeholder) =>{
@@ -83,8 +83,8 @@ const getdata = async (req, res, next) => {
 
     let avg_hash = 0;
 
-    db.connect();
-    hashrateModel.aggregate([{ $group:{_id: null, AverageValue: { $avg: "$hashrate" }}}],
+    await db.connect();
+    await hashrateModel.aggregate([{ $group:{_id: null, AverageValue: { $avg: "$hashrate" }}}],
             (error, result) => {
               avg_hash = result[0].AverageValue;
             });
@@ -134,7 +134,7 @@ const getdata = async (req, res, next) => {
 
     try {
       const start = getStartTime(placeholder);
-      db.connect();
+    //   await db.connect();
       const history = await hashrateModel.find({"timestamp":{$gte: start}});
 
       body = {

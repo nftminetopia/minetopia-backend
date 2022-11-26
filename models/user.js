@@ -41,11 +41,11 @@ const User = mongoose.model("User", userSchema);
  * @param info is an array of object
  * @returns user info
  */
-const insertUser = (info) => {
+const insertUser = async (info) => {
   if (!info.wallet) throw new Error("Wallet is required");
 
-  db.connect();
-  const result = User.create(
+  await db.connect();
+  const result = await User.create(
     {info}
   );
 
@@ -60,13 +60,11 @@ const insertUser = (info) => {
  * @param wallet is the ethereum public key
  * @returns user info
  */
-const getUserByWallet = (wallet) => {
+const getUserByWallet = async (wallet) => {
   if (!wallet) throw new Error("Wallet is required");
 
-  db.connect();
-  const result = User.find(
-    {wallet:wallet}
-  );
+  await db.connect();
+  const result = await User.findOne({wallet:wallet});
 
   return result;
 };

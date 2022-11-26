@@ -39,10 +39,12 @@ const signIn = async (req, res, next) => {
     const { message, signature } = req.body;
 
     if (!message || !signature) throw new Error(createHttpError(400));
+    // const walletAddress = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";
     // const walletAddress = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"//
     const walletAddress = await web3.eth.accounts.recover(message, signature);
 
-    let userInfo = getUserByWallet(walletAddress);
+    console.log(walletAddress);
+    let userInfo = await getUserByWallet(walletAddress);
 
     if (!userInfo || userInfo.expiresIn <= Date.now()) {
       const nftsBalance = await getBalanceOf(walletAddress);
@@ -53,10 +55,10 @@ const signIn = async (req, res, next) => {
         expiresIn: Date.now() + 1000 * 60 * 60 * 24 * 1, // one day
       };
 
-      userInfo = insertUser(user); // creating user
+      userInfo = await insertUser(user); // creating user
     }
 
-    const token = issueJWT(userInfo);
+    const token = await issueJWT(userInfo);
 
     res.status(200).json({
       accessToken: token,
