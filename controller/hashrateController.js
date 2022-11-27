@@ -30,7 +30,7 @@ const callLiteCoinAPI = ()=>{
   });
 }
 
-// setInterval(callLiteCoinAPI, 600000);
+setInterval(callLiteCoinAPI, 600000);
 
 // to get starttime for distinct timespans
 const getStartTime = (placeholder) =>{
