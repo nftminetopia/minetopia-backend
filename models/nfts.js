@@ -62,7 +62,7 @@ const insertNFTs = async (wallet, userNFTs) => {
 
   const {nfts, expiresIn} = userNFTs;
 
-  db.connect();
+  await db.connect();
   const result = await Nft.create(
     {
     wallet_address : wallet,
