@@ -7,8 +7,7 @@ const {
 } = require("../configs/contracts");
 const NodeCache = require("node-cache");
 const Web3Initializer = require("../configs/web3");
-
-const { getNFTsByWallet, insertNFTs } = require("../models/nfts");
+const NFT = require("../models/nfts");
 const contractCache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 
 /**
@@ -101,7 +100,7 @@ const getWalletBalance = async (req, res, next) => {
       Community: "Community",
       Expansion: "Expansion",
       MaintenanceAndTeam: "Maintenance And Team",
-    }
+    };
 
     const balancesPromises = Object.keys(walletsInfo).map((key) =>
       getBalance(walletsInfo[key])
@@ -111,7 +110,11 @@ const getWalletBalance = async (req, res, next) => {
 
     const payload = Object.keys(walletsInfo).map((key, index) => {
       return {
-        [key]: { wallet: walletsInfo[key], balance: balances[index], name: names[key] },
+        [key]: {
+          wallet: walletsInfo[key],
+          balance: balances[index],
+          name: names[key],
+        },
       };
     });
 
@@ -135,6 +138,21 @@ const _getWalletNFTsInfo = async (wallet) => {
   return await contractInstance.getWalletNFTs();
 };
 
+const createOrUpdate = async ({ expiresIn, wallet, nfts }) => {
+  let nftsInfo = await NFT.findOne({ wallet });
+
+  if (!nftsInfo) {
+    const document = NFT({
+      wallet: walletAddress,
+      nfts,
+      expiresIn,
+    });
+
+    return await document.save(); // creating user
+  }
+
+  return await NFT.updateOne({ wallet }, { nfts, expiresIn });
+};
 /**
  * @dev fetches the NFTs
  * @param {Object} req is request object
@@ -146,20 +164,22 @@ const getWalletNFTs = async (req, res, next) => {
   try {
     const { wallet } = req.user;
 
-    // const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b";  //is temp
-    // const wallet = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";  //is temp
+    console.log(`for NFTs: ${wallet}`);
 
+    // const wallet = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";  //is temp
+    // const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"; //is temp
     if (!wallet) throw new Error(createHttpError(400));
 
-    let nftsOwn = await getNFTsByWallet(wallet);
-
+    let nftsOwn = await NFT.findOne({ wallet });
     if (!nftsOwn || nftsOwn.expiresIn <= Date.now()) {
-      const walletNFTs = await _getWalletNFTsInfo(wallet);
+      const nfts = await _getWalletNFTsInfo(wallet);
+      console.log({ nfts });
       const payload = {
-        nfts: walletNFTs,
+        nfts,
         expiresIn: Date.now() + 1000 * 60 * 60 * 24 * 1, // one day
       };
-      nftsOwn = await insertNFTs(wallet, payload);
+
+      await createOrUpdate({ ...payload, wallet });
     }
 
     res.status(200).json(nftsOwn);

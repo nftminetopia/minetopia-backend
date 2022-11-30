@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
-const connect = () => {
-  mongoose.connect(
+const connect = async () => {
+  await mongoose.connect(
     "mongodb+srv://root:brownfox@cluster0.3ekr1kt.mongodb.net/?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     }
   );
+  console.log("DB Connected");
 };
 
-module.exports = { connect: connect}
+module.exports = { connect };
 
 // const mySQL = require('mysql2') // uncomment to flip MySQL
 

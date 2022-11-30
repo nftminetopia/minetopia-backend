@@ -1,6 +1,6 @@
 const Web3Initializer = require("./web3");
 const axios = require("axios");
-const yfinance = require('yahoo-finance');
+const yfinance = require("yahoo-finance");
 
 /**
  * @dev minetopia NFT's contract instance.
@@ -44,7 +44,6 @@ class MinetopiaNFT extends Web3Initializer {
    */
   async getWalletNFTs() {
     const tokenIds = await this._walletNFTs();
-
     let tokenIdInfoPromise = tokenIds.map(
       (tokenId) =>
         new Promise((resolve, reject) => {
@@ -150,25 +149,23 @@ class Litecoin_USD_PriceFeed extends Web3Initializer {
  * @dev KADENA to USD price feed contract instance.
  * yahoo finance is used instead of contract
  */
-class Kadena_USD_PriceFeed{
-  constructor() {
-    
-  }
+class Kadena_USD_PriceFeed {
+  constructor() {}
   /**
    * @dev fetches the LTC/USD price
    * @return number
    */
   async get_KDA_USD_price() {
-  
-    const { price } = await yfinance.quote({
-      symbol: 'KDA-USD',
-      modules: [ 'price', 'summaryDetail' ]
-      // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
-    }, function (err, quotes) {
+    const { price } = await yfinance.quote(
+      {
+        symbol: "KDA-USD",
+        modules: ["price", "summaryDetail"],
+        // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
+      },
+      function (err, quotes) {}
+    );
 
-    });
-
-    let result = price['regularMarketPrice'];
+    let result = price["regularMarketPrice"];
 
     return result;
   }
@@ -179,5 +176,5 @@ module.exports = {
   Bitcon_USD_PriceFeed,
   Ethereum_USD_PriceFeed,
   Litecoin_USD_PriceFeed,
-  Kadena_USD_PriceFeed
+  Kadena_USD_PriceFeed,
 };

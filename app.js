@@ -1,34 +1,28 @@
 require("dotenv").config();
-
-// const { reset } = require("nodemon");
-
 const createError = require("http-errors"),
-express = require("express"),
-  // logger = require("morgan"),
+  express = require("express"),
   cors = require("cors");
-  passport = require("./configs/passport");
+const passport = require("./configs/passport");
 const helmet = require("helmet");
+
+require("./configs/database").connect();
+
 const app = express();
-
-const hashRouter = require("./routes/hashrate"); //to import Hashrate Router
-
-app.use(helmet());
-
-// app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-app.use(passport.initialize());
 
 app.use(cors());
 app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(helmet());
 
-app.use("/api/hash", hashRouter.router);
+app.use(passport.initialize());
+
+app.use("/api/hash", require("./routes/hashrate"));
 app.use("/api/v1", require("./routes/index"));
 
 app.use("/", (req, res) => {
   res.status(200);
-  res.send({msg: "This is home"});
+  res.send({ msg: "This is home" });
   res.end();
 });
 
