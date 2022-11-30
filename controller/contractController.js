@@ -143,7 +143,7 @@ const createOrUpdate = async ({ expiresIn, wallet, nfts }) => {
 
   if (!nftsInfo) {
     const document = NFT({
-      wallet: walletAddress,
+      wallet: wallet,
       nfts,
       expiresIn,
     });
@@ -164,8 +164,6 @@ const getWalletNFTs = async (req, res, next) => {
   try {
     const { wallet } = req.user;
 
-    console.log(`for NFTs: ${wallet}`);
-
     // const wallet = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";  //is temp
     // const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"; //is temp
     if (!wallet) throw new Error(createHttpError(400));
@@ -181,6 +179,8 @@ const getWalletNFTs = async (req, res, next) => {
 
       await createOrUpdate({ ...payload, wallet });
     }
+
+    console.log(nftsOwn);
 
     res.status(200).json(nftsOwn);
   } catch (err) {
