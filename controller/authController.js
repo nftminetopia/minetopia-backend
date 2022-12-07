@@ -54,7 +54,6 @@ const signIn = async (req, res, next) => {
     const { message, signature } = req.body;
 
     if (!message || !signature) throw new Error(createHttpError(400));
-    // const walletAddress = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";
     // const walletAddress = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"; //
     const walletAddress = await web3.eth.accounts.recover(message, signature);
 
@@ -73,8 +72,6 @@ const signIn = async (req, res, next) => {
     }
 
     const token = issueJWT(userInfo);
-
-    console.log(token);
 
     res.status(200).json({
       accessToken: token,

@@ -164,14 +164,12 @@ const getWalletNFTs = async (req, res, next) => {
   try {
     const { wallet } = req.user;
 
-    // const wallet = "0x8e22c3f1339e515161d8ab754b9e0d9de196bc93";  //is temp
     // const wallet = "0xfaa9f97a08446004fd005c4e9b526c053afd4a0b"; //is temp
     if (!wallet) throw new Error(createHttpError(400));
 
     let nftsOwn = await NFT.findOne({ wallet });
     if (!nftsOwn || nftsOwn.expiresIn <= Date.now()) {
       const nfts = await _getWalletNFTsInfo(wallet);
-      console.log({ nfts });
       const payload = {
         nfts,
         expiresIn: Date.now() + 1000 * 60 * 60 * 24 * 1, // one day
@@ -179,8 +177,6 @@ const getWalletNFTs = async (req, res, next) => {
 
       await createOrUpdate({ ...payload, wallet });
     }
-
-    console.log(nftsOwn);
 
     res.status(200).json(nftsOwn);
   } catch (err) {
