@@ -45,7 +45,7 @@ const getPriceFeeds = async (req, res, next) => {
       kdaToUsd,
     ]);
     const payload = {
-      "BTC/USD": btcToUsd,
+      // "BTC/USD": btcToUsd,
       "ETH/USD": ethToUsd,
       "LTC/USD": ltcToUsd,
       "KDA/USD": kdaToUsd,
