@@ -36,7 +36,7 @@ const getPriceFeeds = async (req, res, next) => {
     let ethToUsd = ethPriceFeed.get_ETH_USD_price();
     let ltcToUsd = ltcPriceFeed.get_LTC_USD_price();
     let kdaToUsd = kdaPriceFeed.get_KDA_USD_price();
-    let ckbToUsd = ckbPriceFeed.get_KDA_USD_price();
+    let ckbToUsd = ckbPriceFeed.get_CKB_USD_price();
 
     [ethToUsd, ltcToUsd, kdaToUsd, ckbToUsd] = await Promise.all([
       ethToUsd,
