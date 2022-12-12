@@ -160,7 +160,27 @@ class Kadena_USD_PriceFeed {
       {
         symbol: "KDA-USD",
         modules: ["price", "summaryDetail"],
-        // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
+      },
+      function (err, quotes) {}
+    );
+
+    let result = price["regularMarketPrice"];
+
+    return result;
+  }
+}
+
+class Nervos_USD_PriceFeed {
+  constructor() {}
+  /**
+   * @dev fetches the LTC/USD price
+   * @return number
+   */
+  async get_CKB_USD_price() {
+    const { price } = await yfinance.quote(
+      {
+        symbol: "CKB-USD",
+        modules: ["price", "summaryDetail"],
       },
       function (err, quotes) {}
     );
@@ -173,8 +193,8 @@ class Kadena_USD_PriceFeed {
 
 module.exports = {
   MinetopiaNFT,
-  Bitcon_USD_PriceFeed,
   Ethereum_USD_PriceFeed,
   Litecoin_USD_PriceFeed,
   Kadena_USD_PriceFeed,
+  Nervos_USD_PriceFeed,
 };
