@@ -1,5 +1,4 @@
 const {
-  Bitcon_USD_PriceFeed,
   Ethereum_USD_PriceFeed,
   Litecoin_USD_PriceFeed,
   Kadena_USD_PriceFeed,
@@ -28,27 +27,24 @@ const getPriceFeeds = async (req, res, next) => {
     }
 
     // fetch the price feed
-    const btcPriceFeed = new Bitcon_USD_PriceFeed();
     const ethPriceFeed = new Ethereum_USD_PriceFeed();
     const ltcPriceFeed = new Litecoin_USD_PriceFeed();
     const kdaPriceFeed = new Kadena_USD_PriceFeed();
 
-    let btcToUsd = btcPriceFeed.get_BTC_USD_price();
     let ethToUsd = ethPriceFeed.get_ETH_USD_price();
     let ltcToUsd = ltcPriceFeed.get_LTC_USD_price();
     let kdaToUsd = kdaPriceFeed.get_KDA_USD_price();
 
-    [btcToUsd, ethToUsd, ltcToUsd, kdaToUsd] = await Promise.all([
-      btcToUsd,
+    [ethToUsd, ltcToUsd, kdaToUsd] = await Promise.all([
       ethToUsd,
       ltcToUsd,
       kdaToUsd,
     ]);
     const payload = {
-      // "BTC/USD": btcToUsd,
       "ETH/USD": ethToUsd,
       "LTC/USD": ltcToUsd,
       "KDA/USD": kdaToUsd,
+      // "CKB/USD": ckbToUsd,
     };
     // save the payload to cache
     contractCache.set(CACHE_KEY, payload);
