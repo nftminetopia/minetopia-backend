@@ -142,7 +142,7 @@ const getdata = async (req, res, next) => {
   try {
     const start = getStartTime(placeholder);
     //   await db.connect();
-    const history = await hashrateModel.find({ timestamp: { $gte: start } });
+    const history = await hashrateModel.find({ timestamp: { $gte: start } }).sort({ hashrate: 'asc' });
 
     body = {
       ltc_usd: ltc_usd,
