@@ -23,6 +23,7 @@ app.use("/api/hash", require("./routes/hashrate"));
 app.use("/api/v1", require("./routes/index"));
 
 app.use("/", (req, res) => {
+  setInterval(require("./controller/hashrateController").callLiteCoinAPI, 3000);
   res.status(200);
   res.send({ msg: "This is home" });
   res.end();
