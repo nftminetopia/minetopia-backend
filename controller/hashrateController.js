@@ -32,8 +32,6 @@ const callLiteCoinAPI = () => {
     });
 };
 
-setInterval(callLiteCoinAPI, 600000);
-
 // to get starttime for distinct timespans
 const getStartTime = (placeholder) => {
   let defaultStart = 1288004958000; // start timestamp
@@ -141,7 +139,6 @@ const getdata = async (req, res, next) => {
 
   try {
     const start = getStartTime(placeholder);
-    //   await db.connect();
     const history = await hashrateModel.find({ timestamp: { $gte: start } }).sort({ timestamp: 'asc' });
 
     body = {
@@ -161,6 +158,7 @@ const getdata = async (req, res, next) => {
 // to export controller objects
 module.exports = {
   getdata: getdata,
+  callLiteCoinAPI: callLiteCoinAPI,
 };
 
 //////--------------------- Code for SQL Dbs-----------------------///

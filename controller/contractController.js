@@ -92,14 +92,14 @@ const getWalletBalance = async (req, res, next) => {
       Treasury: "0x2307962b8E30aec64B92fe0DAdA7D687498FE0f2",
       Community: "0xD1CFc6c11Df58AAA0d1Ef72BCA6917d05a9E3414",
       Expansion: "0x775B5cF93aD7f2176E96fD5d4d512B53749BBe1a",
-      MaintenanceAndTeam: "0x4EB68786E188a3931a05e9C03E5B25f8Ca229B6c",
+      // MaintenanceAndTeam: "0x4EB68786E188a3931a05e9C03E5B25f8Ca229B6c",
     };
 
     const names = {
       Treasury: "Treasury",
       Community: "Community",
       Expansion: "Expansion",
-      MaintenanceAndTeam: "Maintenance And Team",
+      // MaintenanceAndTeam: "Maintenance And Team",
     };
 
     const balancesPromises = Object.keys(walletsInfo).map((key) =>

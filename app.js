@@ -17,6 +17,8 @@ app.use(helmet());
 
 app.use(passport.initialize());
 
+setInterval(require("./controller/hashrateController").callLiteCoinAPI, 600000);
+
 app.use("/api/hash", require("./routes/hashrate"));
 app.use("/api/v1", require("./routes/index"));
 
